@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Read LocalStorage example",
+  "description": "This extension read current page's localStorage",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["storage.js"]
+    }
+  ],
+  "devtools_page": "devtools.html",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "http://lorempixel.com/"
+  ]
+}
